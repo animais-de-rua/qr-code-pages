@@ -1,0 +1,14 @@
+{
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    },
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
+    "editor.detectIndentation": true,
+    "html.format.wrapAttributes": "auto",
+    "html.format.wrapLineLength": 0,
+    "eslint.workingDirectories": [
+        "./src",
+    ]
+}
