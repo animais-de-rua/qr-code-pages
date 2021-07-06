@@ -1,26 +1,29 @@
 {
-  "name": "vanilla",
+  "name": "adr-qr-code",
   "version": "1.0.0",
   "description": "JavaScript example starter project",
-  "main": "src/index.html",
+  "main": "index.html",
   "scripts": {
-    "start": "npm run clear-cache && parcel src/index.html --open",
-    "build": "npm run clear-cache && parcel build src/index.html --no-source-maps && npm run copy-public",
-    "clear-cache": "del-cli --force ./.cache && del-cli --force ./dist",
-    "copy-public": "cp -r ./src/public/* ./dist"
+    "start": "npm run clear-cache && parcel index.html --open",
+    "build": "npm run clear-cache && parcel build index.html --public-url /qr --no-source-maps",
+    "clear-cache": "del-cli --force ./.cache && del-cli --force ./dist"
   },
   "dependencies": {
     "bootstrap": "5.0.2",
-    "cantil": "^1.1.2",
-    "del-cli": "^4.0.0",
-    "eslint": "^7.29.0",
-    "eslint-config-airbnb-base": "^14.2.1",
-    "eslint-plugin-import": "^2.23.4",
-    "parcel-bundler": "^1.6.1",
-    "sass": "^1.35.1",
-    "startbootstrap-scrolling-nav": "5.0.1"
+    "cantil": "^1.1.2"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.12.3",
+    "del-cli": "^3.0.1",
+    "eslint": "^7.11.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.22.1",
+    "parcel-bundler": "^1.12.4",
+    "posthtml": "^0.15.1",
+    "posthtml-expressions": "^1.5.0",
+    "posthtml-include": "^1.5.0",
+    "sass": "^1.35.1"
+  },
   "resolutions": {},
   "keywords": [
     "javascript",

@@ -1,22 +1,28 @@
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
 :root {
   --c-primary: darkblue;
 }
 
 header {
-  padding-top: 30rem;
   background-image: var(--background);
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: center center;
   background-size: cover;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 
   .container {
     background-color: white;
-    width: 80%;
+    width: 80vw;
+    max-width: initial;
     color: black;
     margin-right: 0;
     padding: 1.6rem;
-    border-top: solid .8rem var(--c-primary);
+    border-top: solid 0.8rem var(--c-primary);
   }
 
   .lead {
@@ -34,7 +40,7 @@ header {
 section {
   &.about {
     h2 {
-      border-left: solid .375rem var(--c-primary);
+      border-left: solid 0.375rem var(--c-primary);
       padding: 1.6rem 0 0 1rem;
       font-size: 2rem;
       font-weight: bold;
@@ -43,23 +49,30 @@ section {
     p {
       font-size: 1.15rem;
       font-weight: 400;
-      padding-top: .6rem;
+      padding-top: 0.6rem;
     }
   }
 
   &.carousel {
-    .container {
+    .main.container {
       position: relative;
+      display: flex;
+      justify-content: center;
+      height: 60vh;
+      align-items: center;
 
       img {
         border-right: solid 8px var(--c-primary);
-        width: 80%;
+        max-height: 100%;
+        max-width: 90vw;
+        object-fit: contain;
       }
     }
 
     /* gallery */
     .column {
       flex: 1 1 0;
+      padding-right: 0;
 
       img {
         opacity: 0.8;
@@ -67,17 +80,21 @@ section {
         width: 100%;
         height: 100%;
         object-fit: cover;
+        max-height: 20rem;
 
         &:hover {
           opacity: 1;
         }
+      }
+
+      &.active img {
+        opacity: 1;
       }
     }
 
     .row {
       margin-right: 0;
     }
-
   }
 
   &.testimony {
@@ -102,7 +119,7 @@ section {
 
       &::after {
         content: '|';
-        margin: 0 .4rem;
+        margin: 0 0.4rem;
         font-weight: normal;
         color: #444;
       }
@@ -127,5 +144,15 @@ footer {
     &:hover {
       color: rgba(255, 255, 255, 80%);
     }
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  header {
+    height: 75vh;
+  }
+
+  section.carousel .column img {
+    max-width: 95%;
   }
 }
