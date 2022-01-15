@@ -1,8 +1,33 @@
 @import 'bootstrap/dist/css/bootstrap.min.css';
 
 :root {
-  --c-primary: darkblue;
+  --c-primary: #384361;
 }
+
+@font-face {
+  font-family: 'icons';
+  src: url('../icons.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  font-family: 'icons' !important;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-facebook:before { content: "\e900"; }
+.icon-instagram:before { content: "\e901"; }
+.icon-web:before { content: "\e902"; }
+.icon-youtube:before { content: "\e903"; }
+.icon-store:before { content: "\e904"; }
 
 header {
   background-image: var(--background);
@@ -14,6 +39,7 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  overflow: hidden;
 
   .container {
     background-color: white;
@@ -134,12 +160,14 @@ section {
 footer {
   background-color: var(--c-primary);
 
-  a {
-    font-variant: small-caps;
+  a, p {
+    /*font-variant: small-caps;*/
     color: white;
     font-size: 0.8rem;
     text-decoration: none;
     font-weight: 500;
+    margin-bottom: 0rem;
+    margin-left: 0.4rem;
 
     &:hover {
       color: rgba(255, 255, 255, 80%);
@@ -147,12 +175,18 @@ footer {
   }
 }
 
-@media only screen and (min-width: 1024px) {
+@media all and (min-width: 1024px) {
   header {
     height: 75vh;
   }
 
   section.carousel .column img {
     max-width: 95%;
+  }
+
+  body {
+    max-width: 1024px;
+    margin: auto;
+    box-shadow: 0 2px 10px 5px #0003;
   }
 }
